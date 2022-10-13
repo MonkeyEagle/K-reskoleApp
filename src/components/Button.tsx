@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import React from "react";
 
 interface Props extends PressableProps {
-  variant?: "dark" | "light" | "filled" | "outline" | "ghost";
+  variant?: "AirBnb" | "dark" | "light" | "filled" | "outline" | "ghost";
   styles?: string;
   children: ReactNode;
 }
@@ -20,13 +20,19 @@ export const Button = ({
   let textColorVariant = "";
 
   switch (variant) {
-    case "dark":
-      style = "bg-black";
+    case "AirBnb":
+      style =
+        "w-full bg-black outline-none rounded-t-lg rounded-b-lg touch-manipulation no-underline";
       textColorVariant = "text-white";
       break;
     case "light":
-      style = "bg-white";
+      style =
+        "w-full bg-white border-black rounded-t-lg rounded-b-l outline-none border-solid border touch-manipulation relative m-0 ";
       textColorVariant = "text-black";
+      break;
+    case "dark":
+      style = "bg-black";
+      textColorVariant = "text-white";
       break;
     case "filled":
       style = "bg-blue-500 hover:bg-blue-700";
@@ -35,10 +41,6 @@ export const Button = ({
     case "outline":
       style = "bg-blue-100 hover:bg-blue-700";
       textColorVariant = "text-blue-500";
-      break;
-    case "light":
-      style = "bg-white";
-      textStyle = "text-black";
       break;
   }
 
@@ -53,11 +55,14 @@ export const Button = ({
         let activeClassNames = "";
         if (pressed) {
           switch (variant) {
-            case "dark":
-              activeClassNames = "bg-neutral-700";
+            case "AirBnb":
+              activeClassNames = "bg-neutral-800";
               break;
             case "light":
               activeClassNames = "bg-neutral-100";
+              break;
+            case "dark":
+              activeClassNames = "bg-neutral-700";
               break;
             case "filled":
               activeClassNames = "bg-blue-600 hover:bg-blue-700";
