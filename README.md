@@ -1,5 +1,4 @@
-# Revolut Kids Clone
-
+https://github.com/catalinmiron/react-native-movie-2.0-carousel 
 > A React Native clone from the Revolut Kids app
 
 ## Tools
